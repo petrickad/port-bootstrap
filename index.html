@@ -17,7 +17,8 @@
             height: 100%;
             background-image: url('imagem/backgroud.jpg');
             background-size: cover;
-            background-position: top;
+            background-position: center;
+            background-attachment: fixed;
             z-index: -1;
         }
         .card{
@@ -132,6 +133,9 @@
             color: white;
         }
         @media screen and (max-width: 767px){
+            .background{
+                background-attachment: scroll;
+            }
             .card{
                 margin: 70px 20px 10px 20px;
                 padding: 10px ;
@@ -227,7 +231,9 @@
         </style>
 </head>
 <body>
-    <div class="backgroud"></div>
+    <div class="background-container">
+        <div class="backgroud"></div>
+    </div>
     <div class="menu-hamburguer">
         <button type="button" class="navbar-toggler drop-toggle-split mt-2" data-bs-toggle="dropdown" data-bs-target="#menu-hamburguer">
             <span id="hamburguer" class="navbar-toggler-icon"></span>
