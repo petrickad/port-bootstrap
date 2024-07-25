@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        .backgroud{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('imagem/backgroud.jpg');
+            background-size: cover;
+            background-position: top;
+            z-index: -1;
+        }
+        .card{
+            margin: 60px 150px;
+            color: white;
+            padding: 10px 50px;
+            background-color: rgba(1, 2, 7, 0.705);
+            border-radius: 20px;
+        }
+        .card-header h1{
+            font-family: "Merriweather", serif;
+            margin: 30px 0;
+            font-size: 55px;
+        }
+        .nav-pills .nav-link{
+            color: white;
+        }
+        .nav-link:hover{
+            cursor: pointer;
+        }
+        .nav-pills .nav-link.active{
+            background-color: rgba(0, 0, 0, 0.336);
+            color: white;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            
+        }
+        .header-container .foto-identificacao{
+            display: none;
+        }
+        .foto-identificacao{
+            box-shadow: 0 0 22px black;
+            margin: 20px 20px;
+            min-width: 300px;
+            max-width: 300px;
+            border-radius: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+        .background-content{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+        }
+        .mensage-content{
+            max-height: 400px;
+            min-height: 400px;
+            padding: 30px;
+            font-size: 23px;
+            background-color: rgba(0, 0, 0, 0.336);
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        .mensage-content p{
+            margin: 0 50px;
+        }
+        .mensage-content li{
+            margin: 30px;
+        }
+        .contatos{
+            padding: 0 60px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
+        .contato a{
+            display: flex;
+            margin: 0;
+            text-decoration: none;
+        }
+        .contato p{
+            margin: 0 5px;
+        }
+        .contato img{
+            margin-top: 7px;
+            height: 24px;
+        }
+        .img-slide{
+            width: 100%;
+            min-height: 571px;
+        }
+        .carousel-caption{
+            background-color: rgba(0, 0, 0, 0.288);
+        }
+        #seta{
+            background-color: rgba(0, 0, 0, 0.226);
+            border-radius: 100%;
+            min-height: 50px;
+            min-width: 50px;
+        }
+        .menu-hamburguer{
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+        }
+        #hamburguer{
+            background-color: rgba(33, 37, 37, 0.788);
+            min-width: 60px;
+            min-height: 60px;
+            border-radius: 100%;
+        }
+        .navbar-toggler-icon{
+            background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%28255, 255, 255, 1%29" stroke-width="1.8" stroke-linecap="round" stroke-miterlimit="8" d="M6 10h18M6 15h18M6 20h18"/%3E%3C/svg%3E');
+        }
+        .dropdown-menu{
+            background-color: rgba(33, 37, 37, 0.788);
+        }
+        .dropdown-menu a{
+            color: white;
+        }
+        @media screen and (max-width: 767px){
+            .card{
+                margin: 70px 20px 10px 20px;
+                padding: 10px ;
+            }
+            .card.card-slides{
+                margin-bottom: 250px;
+            }
+            .card-header h1{
+                font-size: 30px;
+            }
+            #menu{
+                font-size: 15px;
+            }
+            .mensage-content .foto-identificacao{
+                display: none;
+            }
+            .mensage-content{
+                font-size: 15px;
+                padding: 20px;
+                max-height: 200px;
+                min-height: 30vh;
+            }
+            
+            .mensage-content p{
+                margin: 10px;
+            }
+            .contatos{
+                padding: 20px 50px ;
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .contatos p{
+                margin: 10px;
+            }
+            .header-container .foto-identificacao{
+                display: flex;
+                min-width: 150px;
+                height: 150px;
+            }
+            .header-container{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .header-container h1{
+                margin-left: 15px;
+            }
+            .carousel-inner img{
+                min-height: auto;
+            }
+            
+        }
+        @media screen and (min-width: 768px) and (max-width: 1024px){
+            .card{
+                padding: 10px;
+                margin: 30px;
+            }
+            .card.card-slides{
+                margin-bottom: 520px;
+            }
+            .foto-identificacao{
+                min-width: 220px;
+                min-height: 220px;
+            }
+            .header-container{
+                display: flex;
+            }
+            .mensage-content{
+                font-size: 17px;
+                align-items: center;
+            }
+            .mensage-content .foto-identificacao{
+                height: 200px;
+                max-width: 200px;
+                margin-left: 10px;
+            }
+            .contatos{
+                grid-template-columns: repeat(2, 2fr);
+                padding: 0;
+                margin: 0 50px ;
+            }
+            .background-content{
+                min-height: 300px;
+            }
+            .contato p{
+                margin: 3px 8px;
+            }
+            .img-slide{
+                width: 100%;
+                min-height: 320px;
+            }
+        }
+        </style>
+</head>
+<body>
+    <div class="backgroud"></div>
+    <div class="menu-hamburguer">
+        <button type="button" class="navbar-toggler drop-toggle-split mt-2" data-bs-toggle="dropdown" data-bs-target="#menu-hamburguer">
+            <span id="hamburguer" class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="dropdown-menu drop-down-menu-dark">
+            <li class="dropdown-item">
+                <a class="nav-link active" href="#cabecalho">Home</a>
+            </li>
+            <li class="dropdown-item">
+                <a class="nav-link" href="#projetos">Projetos</a>
+            </li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card ">
+                <header id="cabecalho" class="card-header d-flex">
+                    <div class="header-container">
+                        <h1>Olá, me chamo </br> Pétrick Alves Duarte</h1>
+                        <img class="foto-identificacao" src="imagem/Foto.jpg" alt="eu">
+                    </div>
+                </header>  
+                <nav id="menu">
+                    <ul class="nav nav-justified d-flex justify-content-around nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-target="#aba1" data-bs-toggle="tab">Sobre mim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-target="#aba2" data-bs-toggle="tab">Formação</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-target="#aba3" data-bs-toggle="tab">Experiências</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-target="#aba4" data-bs-toggle="tab">Habilidades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-target="#aba5" data-bs-toggle="tab">Contato</a>
+                        </li>                        
+                    </ul>
+                </nav>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="aba1">
+                        <div class="mensage-content d-flex">
+                            <img class="foto-identificacao" src="imagem/Foto.jpg" alt="eu">
+                            <div class="background-content">
+                                <p>Lorem ipsum dolor sit consectetur adipisicing elit. Expedita, est itaque quia, provident deleniti facilis tempore ut dicta nulla aliquam atque, voluptate similique cupiditate saepe fugiat dolorem quibusdam repellendus blanditiis.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="aba2">
+                        <div class="mensage-content d-flex">
+                            <img class="foto-identificacao" src="imagem/Foto.jpg" alt="eu">
+                            <div class="background-content">
+                                <ul>
+                                    <li>
+                                        Gestão de tecnologia da informação TI - UNISINOS<br/>
+                                        <time class="conclucao">2023/2026</time>
+                                    </li>
+                                    <li>
+                                        Desenvolvimento FullStack JAVA - EBAC <br/>
+                                        <time class="conclucao">2023/2025</time>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="aba3">
+                        <div class="mensage-content d-flex">
+                            <img class="foto-identificacao" src="imagem/Foto.jpg" alt="eu">
+                            <div class="background-content">
+                                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad vero laudantium dolor quis vitae nemo ab, rerum recusandae ut provident nobis quo tempore quae sed labore, inventore consequatur, delectus ipsum?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="aba4">
+                        <div class="mensage-content d-flex">
+                            <img class="foto-identificacao" src="imagem/Foto.jpg" alt="eu">
+                            <div class="background-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta voluptatem a numquam eius soluta ab, eveniet libero nam ratione exercitationem, reiciendis incidunt? Qui, eos laborum vero hic cupiditate tempora tenetur.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="aba5">
+                        <div class="mensage-content d-flex">
+                            <img class="foto-identificacao" src="imagem/Foto.jpg" alt="eu">
+                            <div class="background-content">
+                                <div class="contatos">
+                                    <article class="contato">
+                                        <a href="https://instagram.com">
+                                            <img src="imagem/instagram.png" alt=""/>
+                                            <p>Instagram</p>
+                                        </a>
+                                    </article>
+                                    <article class="contato">
+                                        <a href="https://facebook.com">
+                                            <img src="imagem/facebook.png" alt="">
+                                            <p>Facebook</p>
+                                        </a>
+                                    </article>
+                                    <article class="contato">
+                                        <a href="https://wa.me/qr/L3HP5ZUHYGMSN1">
+                                            <img src="imagem/wpp.png" alt="">
+                                            <p>Whatsapp</p>
+                                        </a>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>      
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="">
+                <div class="card card-slides">
+                    <div id="projetos" class="projetos">
+                        <div id="carousel-exemplo" class="carousel carousel-fade slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="img-slide" src="imagem/PADs.png"/>
+                                    <div class="carousel-caption">
+                                        <h2>PAD Shoes</h2>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="img-slide" src="imagem/CLs.png"/>
+                                    <div class="carousel-caption">
+                                        <h2>CELS Shop</h2>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="img-slide" src="imagem/EBM.png"/>
+                                    <div class="carousel-caption">
+                                        <h2>EBAC Motors</h2>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="img-slide" src="imagem/GS.png"/>
+                                    <div class="carousel-caption">
+                                        <h2>Games Shop</h2>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="img-slide" src="imagem/TDs.png"/>
+                                    <div class="carousel-caption">
+                                        <h2>Tests de site</h2>
+                                    </div>
+                                </div>
+                                <button data-bs-target="#carousel-exemplo" data-bs-slide="prev" class="carousel-control-prev" type="button">
+                                    <span id="seta" class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button data-bs-target="#carousel-exemplo" data-bs-slide="next" class="carousel-control-next" type="button">
+                                    <span id="seta" class="carousel-control-next-icon"></span>
+                                </button>
+                                <div class="carousel-indicators">
+                                    <button data-bs-target="#carousel-exemplo" class="active" data-bs-slide-to="0" type="buton"></button>
+                                    <button data-bs-target="#carousel-exemplo" data-bs-slide-to="1" type="button"></button>
+                                    <button data-bs-target="#carousel-exemplo" data-bs-slide-to="2" type="button"></button>
+                                    <button data-bs-target="#carousel-exemplo" data-bs-slide-to="3" type="button"></button>
+                                    <button data-bs-target="#carousel-exemplo" data-bs-slide-to="4" type="button"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="lib/bootstrap.bundle.min.js"></script>
+</body>
