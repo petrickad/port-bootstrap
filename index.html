@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    <style>
+    <style> 
         .backgroud{
             position: fixed;
             width: 100%;
@@ -36,12 +36,11 @@
         .nav-link:hover{
             cursor: pointer;
         }
-        .nav-pills .nav-link.active{
+        .nav-home .nav-link.active{
             background-color: rgba(0, 0, 0, 0.336);
             color: white;
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
-            
         }
         .header-container .foto-identificacao{
             display: none;
@@ -56,6 +55,7 @@
             object-position: top;
         }
         .background-content{
+            justify-content: center;
             width: 100%;
             display: flex;
             align-items: center;
@@ -71,11 +71,73 @@
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
         }
-        .mensage-content p{
+        .mensage-content p,
+        .container-modal button{
             margin: 0 50px;
         }
         .mensage-content li{
             margin: 30px;
+        }
+        p{
+            margin-bottom: 1px;
+        }
+        .experiencias .btn-modal{
+            margin-bottom: 20px;
+        }
+        .btn-modal{
+            color: rgb(151, 109, 109);
+            font-size: 12px;
+        }
+        .background-content.no-align-center {
+            align-items: flex-start;
+        }
+        .nav-ability .nav-link{
+            position: relative;
+        }
+        .nav-ability .nav-link.active{
+            background-color: transparent;
+            border-bottom: 2px solid whitesmoke;
+            border-radius: 0;
+        }
+        :root {
+            --red-to-pink-to-purple-vertical-gradient: linear-gradient(to right, purple, red, rgb(117, 194, 86), purple);
+        }
+        .nav-ability .nav-link.active::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -2px;
+            height: 2px;
+            background: var(--red-to-pink-to-purple-vertical-gradient);
+        }
+        .nav-ability .nav-item:not(:last-child) {
+            border-right: 2px solid purple;
+        }
+        
+        .principal-nav{
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .principal-nav li{
+            margin-top: 130px;
+            margin: 0;
+            min-width: 307.5px;
+            width: 100%;
+        }
+        .icons-skills img{
+            height: 40px;
+        }
+        .icons-skills{
+            margin: 0 60px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .cont-img-skills{
+            align-items: center;
+            display: flex;
+            flex-direction: column;
         }
         .contatos{
             padding: 0 60px;
@@ -147,7 +209,7 @@
                 display: none;
             }
             .mensage-content{
-                font-size: 15px;
+                font-size: 13px;
                 padding: 20px;
                 max-height: 200px;
                 min-height: 30vh;
@@ -155,6 +217,34 @@
             
             .mensage-content p{
                 margin: 10px;
+            }
+            .container-modal{
+                font-size: 10px;
+                margin: 0;
+            }
+            .container-modal .btn{
+                font-size: 10px;
+                margin: 0;
+            }
+            
+            .principal-nav{
+                margin-top: 2px;
+            }
+            .principal-nav li{
+                max-width: 164px;
+                min-width: 100px;
+                font-size: 10px;
+                margin-bottom: 0;
+            }
+            .icons-skills img{
+                max-height: 20px;
+                margin: 0;
+            }
+            .icons-skills{
+                font-size: 10px;
+                margin: 0 60px;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
             }
             .contatos{
                 padding: 20px 50px ;
@@ -206,6 +296,13 @@
                 max-width: 200px;
                 margin-left: 10px;
             }
+            .background-content.no-align-center{
+                max-width: 413px;
+            }
+            .principal-nav li{
+                max-width: 206.5px;
+                min-width: 150px;
+            }
             .contatos{
                 grid-template-columns: repeat(2, 2fr);
                 padding: 0;
@@ -251,7 +348,7 @@
                     </div>
                 </header>  
                 <nav id="menu">
-                    <ul class="nav nav-justified d-flex justify-content-around nav-pills">
+                    <ul class="nav nav-justified justify-content-center nav-pills nav-home">
                         <li class="nav-item">
                             <a class="nav-link active" data-bs-target="#aba1" data-bs-toggle="tab">Sobre mim</a>
                         </li>
@@ -274,7 +371,7 @@
                         <div class="mensage-content d-flex">
                             <img class="foto-identificacao" src="imagem/Foto.jpg" alt="eu">
                             <div class="background-content">
-                                <p>Lorem ipsum dolor sit consectetur adipisicing elit. Expedita, est itaque quia, provident deleniti facilis tempore ut dicta nulla aliquam atque, voluptate similique cupiditate saepe fugiat dolorem quibusdam repellendus blanditiis.</p>
+                                <p>Tenho 24 anos, e atualmente moro em São Leopoldo/RS próximo a campos da Unisinos juntamente da minha familia. Estudo programação aproximadamente a 1 ano, e desde o primeiro contato foi uma paixão a primeira vista. Estou focado em crescer ainda mais na área para meu desenvolvimento pessoal e assim poder agregar cada vez mais na companhia.</p>
                             </div>
                         </div>
                     </div>
@@ -299,15 +396,121 @@
                         <div class="mensage-content d-flex">
                             <img class="foto-identificacao" src="imagem/Foto.jpg" alt="eu">
                             <div class="background-content">
-                                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad vero laudantium dolor quis vitae nemo ab, rerum recusandae ut provident nobis quo tempore quae sed labore, inventore consequatur, delectus ipsum?</p>
+                                <div class="experiencias">
+                                    <div class="container-modal">
+                                        <p>Supervisor de departamento - Americanas Sa.</p>
+                                        <button data-bs-toggle="modal" class="btn btn-modal" data-bs-target="#ref-modal1" >Exibir informações</button>
+                                    </div>
+                                    <div class="modal" id="ref-modal1" data-bs-backdrop="static">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content text-bg-dark">
+                                                <div class="modal-header">
+                                                    <h5>Supervisor de departamento</h5>
+                                                    <button data-bs-dismiss="modal" type="button" class="btn-close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>
+                                                        Minha principal responsabilidade era a área de tecnologia e brinquedos, também associados do meu departamento, assim como fechamento de caixas e da loja. Minhas principais metas eram vendas de eletrônicos e seus serviços de garantia estendida, onde minhas metas sempre alcançavam mais que o esperado.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="container-modal">
+                                        <p>Consultor de vendas - Expansão Brasil</p>
+                                        <button data-bs-toggle="modal" class="btn btn-modal" data-bs-target="#ref-modal2" >Exibir informações</button>
+                                    </div>
+                                    <div class="modal" id="ref-modal2" data-bs-backdrop="static">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content text-bg-dark">
+                                                <div class="modal-header">
+                                                    <h5>Consultor de vendas</h5>
+                                                    <button data-bs-dismiss="modal" type="button" class="btn-close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>
+                                                        Tinha como obrigação realizar ligações para as pessoas do Brasil, oferecendo com maestria planos residencias de banda larga e TV por assinatura, conforme a disponbilidade de estrutura do cliente. Sempre passando confiança para o cliente.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="container-modal">
+                                        <p>Marmorista profissional - Mármoraria Trevizan</p>
+                                        <button data-bs-toggle="modal" class="btn btn-modal" data-bs-target="#ref-modal3" >Exibir informações</button>
+                                    </div>
+                                    <div class="modal" id="ref-modal3" data-bs-backdrop="static">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content text-bg-dark">
+                                                <div class="modal-header">
+                                                    <h5>Marmorista profissional</h5>
+                                                    <button data-bs-dismiss="modal" type="button" class="btn-close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>
+                                                        Minha função não só era o acabamento final, como também todo procedimento de corte, alinhamento, colagem de saias, abetura e colagem de cubas, polimento. Saia para montar quando necessário, pías de banheiro e cozinha, e túmulos.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="tab-pane" id="aba4">
-                        <div class="mensage-content d-flex">
+                        <div class="mensage-content d-flex habilidades-content">
                             <img class="foto-identificacao" src="imagem/Foto.jpg" alt="eu">
-                            <div class="background-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta voluptatem a numquam eius soluta ab, eveniet libero nam ratione exercitationem, reiciendis incidunt? Qui, eos laborum vero hic cupiditate tempora tenetur.</p>
+                            <div class="background-content no-align-center">
+                                <div class="container-ability">
+                                    <nav class="principal-nav">
+                                        <ul class="nav nav-justified justify-content-center nav-pills nav-ability">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" data-bs-target="#ability" data-bs-toggle="tab">Minhas habilidades</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-bs-target="#skills" data-bs-toggle="tab">Skills</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <div class="tab-content ability-content">
+                                        <div class="tab-pane active" id="ability">
+                                            <p>Adquiro expêriencia com facilidade, e tenho alto conhecimento em informática. Também tenho uma comunicação excelente e ótimo com trabalho em equipe, sei me expressar muito bem e sou muito pontual com compromissos</p>
+                                        </div>
+                                        <div class="tab-pane" id="skills">
+                                            <div class="icons-skills">
+                                                <div class="cont-img-skills">
+                                                    <img src="imagem/iconHTML.png" alt="">
+                                                    HTML
+                                                </div>
+                                                <div class="cont-img-skills">
+                                                    <img src="imagem/iconCSS.png" alt="">
+                                                    CSS
+                                                </div>
+                                                <div class="cont-img-skills">
+                                                    <img src="imagem/iconJS.png" alt="">
+                                                    JS
+                                                </div>
+                                                <div class="cont-img-skills">
+                                                    <img src="imagem/iconNode.png" alt="">
+                                                    NodeJS
+                                                </div>
+                                                <div class="cont-img-skills">
+                                                    <img src="imagem/iconAng.png" alt="">
+                                                    Angular
+                                                </div>
+                                                <div class="cont-img-skills">
+                                                    <img src="imagem/iconJava.png" alt="">
+                                                    Java
+                                                </div>
+                                                <div class="cont-img-skills">
+                                                    <img src="imagem/iconReact.png" alt="">
+                                                    React
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
